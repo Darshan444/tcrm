@@ -9,11 +9,14 @@ const InquiryList = React.lazy(() => import("@/Pages/Inquiry/inquiryList"));
 const InquiryTrip = React.lazy(() => import("@/Pages/Inquiry/inquiryTrip"));
 const InquiryDetail = React.lazy(() => import("@/Pages/Inquiry/InquiryDetail"));
 
+var a;
+
 const Routes = () => {
   let element = [
     {
       path: "/",
       element: <Layout />,
+
       children: [
         { path: AppsRoutes.INQUIRY_BOARD_PAGE, element: <InquiryBoard /> },
         { path: AppsRoutes.INQUIRY_CREATE_PAGE, element: <InquiryCreate /> },
