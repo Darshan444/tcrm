@@ -13,14 +13,9 @@ var a;
 const Routes = () => {
   let element = [
     {
-
-
-           path: "/",
-
-
-
+      path: "/",
       element: <Layout />,
-              children: [
+      children: [
         { path: AppsRoutes.INQUIRY_BOARD_PAGE, element: <InquiryBoard /> },
         { path: AppsRoutes.INQUIRY_CREATE_PAGE, element: <InquiryCreate /> },
         { path: AppsRoutes.INQUIRY_LIST_PAGE, element: <InquiryList /> },
