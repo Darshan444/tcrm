@@ -23,7 +23,7 @@ const Routes = () => {
       ],
     },
     // AuthRoutes
-    // {path: AuthRoutes.AUTH_SIGN_IN, element: <SignIn/>},
+    { path: AppsRoutes.INQUIRY_DETAIL_PAGE, element: <InquiryDetail /> },
     // {path: AuthRoutes.AUTH_SIGN_IN_IMG, element: <SignInBgImage/>},
     // {path: AuthRoutes.AUTH_SIGN_UP, element: <SignUp/>},
     // {path: AuthRoutes.AUTH_SIGN_UP_IMG, element: <SignUpBgImage/>},
