@@ -1,21 +1,20 @@
-import React from "react";
-import { useRoutes } from "react-router-dom";
-import { AppsRoutes } from "@/Route/AuthRoutes";
-import Layout from "@/Layout";
+import React from 'react';
+import { useRoutes } from 'react-router-dom';
+import { AppsRoutes } from '@/Route/AuthRoutes';
+import Layout from '@/Layout';
 
-const InquiryBoard = React.lazy(() => import("@/Pages/Inquiry/inquiryBoard"));
-const InquiryCreate = React.lazy(() => import("@/Pages/Inquiry/inquiryCreate"));
-const InquiryList = React.lazy(() => import("@/Pages/Inquiry/inquiryList"));
-const InquiryTrip = React.lazy(() => import("@/Pages/Inquiry/inquiryTrip"));
-const InquiryDetail = React.lazy(() => import("@/Pages/Inquiry/InquiryDetail"));
-
+const InquiryBoard = React.lazy(() => import('@/Pages/Inquiry/inquiryBoard'));
+const InquiryCreate = React.lazy(() => import('@/Pages/Inquiry/inquiryCreate'));
+const InquiryList = React.lazy(() => import('@/Pages/Inquiry/inquiryList'));
+const InquiryTrip = React.lazy(() => import('@/Pages/Inquiry/inquiryTrip'));
+const InquiryDetail = React.lazy(() => import('@/Pages/Inquiry/InquiryDetail'));
 
 const Routes = () => {
   let element = [
     {
-          path: "/",
+      path: '/',
       element: <Layout />,
-                children: [
+      children: [
         { path: AppsRoutes.INQUIRY_BOARD_PAGE, element: <InquiryBoard /> },
         { path: AppsRoutes.INQUIRY_CREATE_PAGE, element: <InquiryCreate /> },
         { path: AppsRoutes.INQUIRY_LIST_PAGE, element: <InquiryList /> },
