@@ -13,14 +13,10 @@ const Routes = () => {
   let element = [
     {
       path: "/",
-
       element: <Layout />,
-
       children: [
         { path: AppsRoutes.INQUIRY_BOARD_PAGE, element: <InquiryBoard /> },
-
         { path: AppsRoutes.INQUIRY_CREATE_PAGE, element: <InquiryCreate /> },
-
         { path: AppsRoutes.INQUIRY_LIST_PAGE, element: <InquiryList /> },
         { path: AppsRoutes.INQUIRY_TRIP_PAGE, element: <InquiryTrip /> },
         { path: AppsRoutes.INQUIRY_DETAIL_PAGE, element: <InquiryDetail /> },
