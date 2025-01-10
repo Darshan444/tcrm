@@ -14,7 +14,6 @@ const Routes = () => {
   let element = [
     {
 
-      
            path: "/",
       element: <Layout />,
                  children: [
