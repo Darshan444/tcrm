@@ -69,21 +69,14 @@
     "vite": "^5.4.0"
   },
   "lint-staged": {
-    "*.ts": [
+    "*.{js,jsx,ts,tsx}": [
       "eslint --fix",
-      "prettier --write"
+      "prettier --write",
+      "git add"
     ],
-    "*.tsx": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.js": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.jsx": [
-      "eslint --fix",
-      "prettier --write"
+    "*.{css,scss,md}": [
+      "prettier --write",
+      "git add"
     ]
   }
 }
