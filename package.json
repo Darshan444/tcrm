@@ -6,8 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint . --fix --max-warnings=0",
+    "format": "prettier . --write",
+    "prepare": "husky install"
   },
   "dependencies": {
     "apexcharts": "^4.2.0",
@@ -49,16 +51,27 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
-    "@types/react": "^18.3.11",
-    "@types/react-dom": "^18.3.0",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.10.5",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^4.3.3",
     "eslint": "^9.17.0",
+    "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-react": "^7.37.3",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.9",
     "git-format-staged": "^3.1.1",
     "globals": "^15.14.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.3.0",
+    "prettier": "3.4.2",
+    "typescript": "^5.7.3",
     "typescript-eslint": "^8.19.1",
     "vite": "^5.4.0"
+  },
+  "lint-staged": {
+    "*.js": "npm run lint",
+    "*.{js,css,md,html,json}": "npm run format"
   }
 }
