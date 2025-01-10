@@ -9,58 +9,74 @@ $colors: (
   info: var(--info),
   light: var(--light),
   dark: var(--dark),
-
-  facebook : var(--facebook),
-  twitter : var(--twitter),
-  pinterest : var(--pinterest),
-  linkedin : var(--linkedin),
-  reddit : var(--reddit),
-  whatsapp : var(--whatsapp),
-  gmail : var(--gmail),
-  telegram : var(--telegram),
-  youtube : var(--youtube),
-  vimeo : var(--vimeo),
-  behance : var(--behance),
-  github : var(--github),
-  skype : var(--skype),
-  snapchat : var(--snapchat)
-  );
+  facebook: var(--facebook),
+  twitter: var(--twitter),
+  pinterest: var(--pinterest),
+  linkedin: var(--linkedin),
+  reddit: var(--reddit),
+  whatsapp: var(--whatsapp),
+  gmail: var(--gmail),
+  telegram: var(--telegram),
+  youtube: var(--youtube),
+  vimeo: var(--vimeo),
+  behance: var(--behance),
+  github: var(--github),
+  skype: var(--skype),
+  snapchat: var(--snapchat),
+);
 
 @mixin btn_mixin($name, $color) {
   .btn-#{$name} {
-    background-color: rgba(#{$color},1);
-    border: 1px solid rgba(#{$color},1);
-    &:hover,&:active ,&.active ,&.show,&:checked,&:focus,&:focus-visible,&.disabled {
-      background-color: rgba(#{$color},1)  !important;
-      border-color: rgba(#{$color},1) !important;
+    background-color: rgba(#{$color}, 1);
+    border: 1px solid rgba(#{$color}, 1);
+    &:hover,
+    &:active,
+    &.active,
+    &.show,
+    &:checked,
+    &:focus,
+    &:focus-visible,
+    &.disabled {
+      background-color: rgba(#{$color}, 1) !important;
+      border-color: rgba(#{$color}, 1) !important;
       transition: var(--app-transition);
     }
   }
 
   .btn-outline-#{$name} {
     background-color: transparent;
-    color: rgba(#{$color},1);
-    border: 1px solid rgba(#{$color},1) !important;
-    &:hover,&.active ,&.show,&:checked,&:focus,&:focus-visible {
-      background-color: rgba(#{$color},1);
+    color: rgba(#{$color}, 1);
+    border: 1px solid rgba(#{$color}, 1) !important;
+    &:hover,
+    &.active,
+    &.show,
+    &:checked,
+    &:focus,
+    &:focus-visible {
+      background-color: rgba(#{$color}, 1);
       color: var(--white);
     }
   }
 
   .btn-light-#{$name} {
-    background-color: rgba(#{$color},0.10) ;
-    color: rgba(#{$color},1) ;
+    background-color: rgba(#{$color}, 0.1);
+    color: rgba(#{$color}, 1);
     border-color: transparent;
-    &:hover,&.active ,&.show,&:checked,&:focus,&:focus-visible {
-      background-color: rgba(#{$color},0.20) ;
-      border-color: rgba(#{$color}, 1) ;
-      color: rgba(#{$color},1) ;
+    &:hover,
+    &.active,
+    &.show,
+    &:checked,
+    &:focus,
+    &:focus-visible {
+      background-color: rgba(#{$color}, 0.2);
+      border-color: rgba(#{$color}, 1);
+      color: rgba(#{$color}, 1);
     }
 
-    &.disabled{
-      background-color: rgba(#{$color},0.10) ;
-      border-color: rgba(#{$color}, 0.5) ;
-      color: rgba(#{$color},0.8) ;
+    &.disabled {
+      background-color: rgba(#{$color}, 0.1);
+      border-color: rgba(#{$color}, 0.5);
+      color: rgba(#{$color}, 0.8);
     }
   }
 }
@@ -69,24 +85,25 @@ $colors: (
   @include btn_mixin($name, map-get($colors, $name));
 }
 
-.btn{
-  &.active,&:hover{
+.btn {
+  &.active,
+  &:hover {
     position: relative;
-    &::before{
+    &::before {
       content: "";
       width: 100%;
       height: 100%;
-      background-color: rgba(var(--dark),0.03);
+      background-color: rgba(var(--dark), 0.03);
       position: absolute;
       left: 0;
       top: 0;
       transition: all 0.3s ease;
     }
   }
-  &.btn-info{
+  &.btn-info {
     color: var(--white);
   }
-  &.icon-btn{
+  &.icon-btn {
     height: 37px;
     width: 37px;
     display: inline-flex;
@@ -97,67 +114,71 @@ $colors: (
   }
 }
 
-.btn-group-xs > .btn, .btn-xs{
+.btn-group-xs > .btn,
+.btn-xs {
   padding: 3px 15px;
   font-size: 13px;
 }
 
-.btn-group-sm > .btn, .btn-sm{
+.btn-group-sm > .btn,
+.btn-sm {
   padding: 4px 20px;
   font-size: 14px;
 }
 
-.btn-group-lg > .btn, .btn-lg{
+.btn-group-lg > .btn,
+.btn-lg {
   padding: 6px 30px;
   font-size: 18px;
 }
 
-.btn-group-xl > .btn,.btn-xl{
+.btn-group-xl > .btn,
+.btn-xl {
   padding: 8px 35px;
   font-size: 20px;
 }
 
-.btn-group-xxl > .btn, .btn-xxl{
+.btn-group-xxl > .btn,
+.btn-xxl {
   padding: 10px 40px;
   font-size: 22px;
 }
 
-button{
-  &:focus{
+button {
+  &:focus {
     &:not(:focus-visible) {
       outline: none !important;
     }
   }
 }
 
-.btn-group, 
+.btn-group,
 .btn-group-vertical {
   vertical-align: middle;
   flex-wrap: wrap;
   justify-content: center;
-} 
-
+}
 
 @mixin border_mixin($name, $color) {
   .b-#{$name} {
-    border: 1px solid rgba  (#{$color},1);
+    border: 1px solid rgba (#{$color}, 1);
   }
 }
 
 @each $name, $color in $colors {
   @include border_mixin($name, map-get($colors, $name));
 }
-.app-btn-list{
+.app-btn-list {
   margin-bottom: -10px;
-    > .btn{
-      margin-bottom: 10px;
-      margin-right: 8px;
-      &:last-child{
-        margin-right: 0;
-      }
+  > .btn {
+    margin-bottom: 10px;
+    margin-right: 8px;
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
-.text-lead{
+.text-lead {
   font-size: 16px;
   font-weight: 400;
 }

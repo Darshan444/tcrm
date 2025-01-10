@@ -138,7 +138,7 @@ $unit: "px"; // Feel free to change the unit.
   border-right: none;
 }
 
-.app-example [class^=d]{
+.app-example [class^="d"] {
   text-align: center;
   display: inline-block;
   width: 200px;
@@ -149,7 +149,7 @@ $unit: "px"; // Feel free to change the unit.
   border-radius: 15px;
 }
 
-.app-example [class^=b] {
+.app-example [class^="b"] {
   text-align: center;
   display: inline-block;
   width: 150px;
@@ -166,7 +166,7 @@ $unit: "px"; // Feel free to change the unit.
     margin: 0.25rem;
   }
 }
-.rotaed-box{
+.rotaed-box {
   --bs-gutter-y: 1rem;
 }
 .rotate {
@@ -196,7 +196,6 @@ $unit: "px"; // Feel free to change the unit.
       border-radius: 50%;
       opacity: 0;
     }
-
   }
 
   &:hover {
@@ -207,7 +206,6 @@ $unit: "px"; // Feel free to change the unit.
         transition: var(--app-transition);
       }
     }
-
   }
 
   &.rotate-180 {
@@ -219,53 +217,51 @@ $unit: "px"; // Feel free to change the unit.
       }
     }
   }
-  &.rotate-270{
-    &:hover{
-      span{
-        &:after{
+  &.rotate-270 {
+    &:hover {
+      span {
+        &:after {
           transform: rotate(270deg);
         }
       }
     }
   }
-  &.rotate-90-1{
-    &:hover{
-      span{
-        &:after{
+  &.rotate-90-1 {
+    &:hover {
+      span {
+        &:after {
           transform: rotate(-90deg);
         }
       }
     }
   }
-  &.rotate-90-1{
-    &:hover{
-      span{
-        &:after{
+  &.rotate-90-1 {
+    &:hover {
+      span {
+        &:after {
           transform: rotate(-90deg);
         }
       }
     }
   }
-  &.rotate-180-1{
-    &:hover{
-      span{
-        &:after{
+  &.rotate-180-1 {
+    &:hover {
+      span {
+        &:after {
           transform: rotate(-90deg);
         }
       }
     }
   }
-  &.rotate-280-1{
-    &:hover{
-      span{
-        &:after{
+  &.rotate-280-1 {
+    &:hover {
+      span {
+        &:after {
           transform: rotate(-90deg);
         }
       }
     }
   }
-
-  
 }
 
 // >>-- 44 Helper_classes css end --<<

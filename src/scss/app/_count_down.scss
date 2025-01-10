@@ -37,7 +37,7 @@
   @extend %countdown;
   & .timer {
     @extend %countdown;
-    text-align: center; 
+    text-align: center;
     border-radius: 4px;
     padding: 12px 24px;
     gap: 8px;
@@ -100,11 +100,11 @@
         text-align: center;
         border-radius: 4px;
       }
-      &.countdown-border{
-        border-radius: 20px 0 0 20px
+      &.countdown-border {
+        border-radius: 20px 0 0 20px;
       }
-      &.countdown-border-1{
-        border-radius: 0 20px 20px 0
+      &.countdown-border-1 {
+        border-radius: 0 20px 20px 0;
       }
     }
   }
@@ -115,7 +115,7 @@
   @extend %countdown;
   & .timer {
     @extend %countdown;
-    text-align: center; 
+    text-align: center;
     border-radius: 4px;
     padding: 12px 24px;
     gap: 25px;
@@ -135,14 +135,14 @@
 }
 
 // countdown 5
-.app-countdown-circle{
+.app-countdown-circle {
   & .timer {
     @extend %countdown;
     gap: 10px;
     border-radius: 5px;
-    .countdown{
+    .countdown {
       @extend %countdown;
-       flex-direction: column;
+      flex-direction: column;
       .minutes,
       .hours,
       .days,
@@ -163,7 +163,6 @@
         font-weight: 600;
         padding: 8px;
         border-radius: 4px;
-
       }
     }
   }
@@ -171,10 +170,10 @@
 
 // countdown 6
 .app-countdown-square {
-  .timer{
+  .timer {
     display: flex;
     gap: 20px;
-    .countdown{
+    .countdown {
       @extend %countdown;
       font-family: math;
       flex-direction: column;
@@ -184,10 +183,8 @@
       padding: 6px;
       color: rgb(var(--dark));
       border: 2px solid rgb(var(--info));
-  
     }
   }
 }
-
 
 // >>-- 35 Count_down css end --<<

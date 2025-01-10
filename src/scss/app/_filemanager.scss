@@ -103,7 +103,6 @@
       }
     }
   }
-
 }
 
 .file-manager-sidebar {
@@ -114,7 +113,7 @@
 
 .quick-access {
   box-shadow: none;
-  border: 1px dashed rgb(var(--secondary), .4);
+  border: 1px dashed rgb(var(--secondary), 0.4);
 
   span {
     img {

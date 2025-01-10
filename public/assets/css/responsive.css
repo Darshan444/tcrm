@@ -13,9 +13,9 @@
   --primary: 72, 190, 206;
   --secondary: 139, 132, 118;
   --success: 174, 204, 52;
-  --danger: 299,94,64;
-  --warning: 235,195,63;
-  --info: 83,90,231;
+  --danger: 299, 94, 64;
+  --warning: 235, 195, 63;
+  --info: 83, 90, 231;
   --light: 229, 227, 224;
   --dark: 72, 68, 61;
   --black: 0, 0, 0;
@@ -58,28 +58,28 @@
 }
 
 .default {
-  --primary: 79,201,218;
+  --primary: 79, 201, 218;
   --secondary: 139, 132, 118;
 }
 
 .gold {
-  --primary: 192,127,0;
-  --secondary: 76,61,61;
+  --primary: 192, 127, 0;
+  --secondary: 76, 61, 61;
 }
 
 .warm {
-  --primary: 255,103,125;
-  --secondary: 111,90,126;
+  --primary: 255, 103, 125;
+  --secondary: 111, 90, 126;
 }
 
 .happy {
-  --primary: 36,114,145;
+  --primary: 36, 114, 145;
   --secondary: 129, 125, 141;
 }
 
 .nature {
-  --primary: 127,180,20;
-  --secondary: 82,80,80;
+  --primary: 127, 180, 20;
+  --secondary: 82, 80, 80;
 }
 
 .cold {
@@ -87,13 +87,14 @@
 }
 
 .hot {
-  --primary: 255,0,77;
+  --primary: 255, 0, 77;
   --secondary: 29, 43, 83;
 }
 
-nav.dark-sidebar, body[class="ltr dark"] {
+nav.dark-sidebar,
+body[class="ltr dark"] {
   --white: #333644;
-  --black: #DCE2F0;
+  --black: #dce2f0;
   --bodybg-color: #282a36;
   --bs-body-bg: #333644;
   --font-color: #fff;
@@ -102,30 +103,34 @@ nav.dark-sidebar, body[class="ltr dark"] {
   --light-gray: #333644;
   --light: 71, 71, 96;
   --dark: 234, 234, 236;
-  --secondary: 185 ,179, 166;
+  --secondary: 185, 179, 166;
   --link-color: #eaeaec;
   --border_color: #474a56;
   --bs-border-color: #474a56;
-  --bs-card-border-color: #5B5E69;
+  --bs-card-border-color: #5b5e69;
   --bs-form-control-bg: #333644;
   --bs-body-color: #ffffff;
-  --bs-secondary-color:#eaeaec;
-  --bs-list-group-color:#eaeaec;
-  --bs-body-color-rgb:#eaeaec;
+  --bs-secondary-color: #eaeaec;
+  --bs-list-group-color: #eaeaec;
+  --bs-body-color-rgb: #eaeaec;
   --bs-text-opacity: 0;
-  --bs-card-color:#eaeaec;
+  --bs-card-color: #eaeaec;
   --bs-tertiary-bg: #242425;
 }
-nav.dark-sidebar .default, body[class="ltr dark"] .default {
-  --secondary: 185 ,179, 166;
+nav.dark-sidebar .default,
+body[class="ltr dark"] .default {
+  --secondary: 185, 179, 166;
 }
-nav.dark-sidebar .disabled > .page-link, nav.dark-sidebar .page-link.disabled, body[class="ltr dark"] .disabled > .page-link, body[class="ltr dark"] .page-link.disabled {
+nav.dark-sidebar .disabled > .page-link,
+nav.dark-sidebar .page-link.disabled,
+body[class="ltr dark"] .disabled > .page-link,
+body[class="ltr dark"] .page-link.disabled {
   color: #eaeaec;
   background-color: #333644;
   border-color: #474a56;
 }
 
-body[text=small-text] {
+body[text="small-text"] {
   --font-size: 13px;
   --p-font-size: 13px;
   --h1-font-size: 2rem;
@@ -136,7 +141,7 @@ body[text=small-text] {
   --h6-font-size: 15px;
   --btn-font-size: 13px;
 }
-body[text=medium-text] {
+body[text="medium-text"] {
   --font-size: 14px;
   --p-font-size: 14px;
   --h1-font-size: 2.81rem;
@@ -147,7 +152,7 @@ body[text=medium-text] {
   --h6-font-size: 1rem;
   --btn-font-size: 15px;
 }
-body[text=large-text] {
+body[text="large-text"] {
   --font-size: 16px;
   --p-font-size: 16px;
   --h1-font-size: 2.75rem;
@@ -710,7 +715,12 @@ body[text=large-text] {
   .app-wrapper nav.horizontal-sidebar .app-nav {
     width: calc(100% - 100px);
   }
-  .app-wrapper nav.horizontal-sidebar ~ .app-content .header-main .card .card-body {
+  .app-wrapper
+    nav.horizontal-sidebar
+    ~ .app-content
+    .header-main
+    .card
+    .card-body {
     width: 100%;
   }
   .price-input {
@@ -773,7 +783,12 @@ body[text=large-text] {
     margin-right: 0.25rem;
     margin-top: -4px;
   }
-  .app-wrapper .semi-nav.horizontal-sidebar .app-nav .main-nav > li:not(.menu-title) > a::after {
+  .app-wrapper
+    .semi-nav.horizontal-sidebar
+    .app-nav
+    .main-nav
+    > li:not(.menu-title)
+    > a::after {
     content: "\ec86";
     transition: var(--app-transition);
   }
@@ -1033,7 +1048,7 @@ body[text=large-text] {
   .chat-container-content-box {
     border-left: 0;
   }
-  .popular-blog-list .position-relative:nth-of-type(n+5) {
+  .popular-blog-list .position-relative:nth-of-type(n + 5) {
     display: none;
   }
   .app-form .form-check-width {
@@ -1114,7 +1129,12 @@ body[text=large-text] {
     content: "\ec86";
     transition: var(--app-transition);
   }
-  .app-wrapper .semi-nav .app-nav .main-nav > li:not(.menu-title) a[aria-expanded=true]::after {
+  .app-wrapper
+    .semi-nav
+    .app-nav
+    .main-nav
+    > li:not(.menu-title)
+    a[aria-expanded="true"]::after {
     content: "\ebf8";
     transition: var(--app-transition);
   }
@@ -1176,7 +1196,8 @@ body[text=large-text] {
     margin: 0 !important;
     display: inline-block;
   }
-  .btn-responsive .btn:not(.btn-xs):not(.btn-sm):not(.btn-lg):not(.btn-xl):not(.btn-xxl) {
+  .btn-responsive
+    .btn:not(.btn-xs):not(.btn-sm):not(.btn-lg):not(.btn-xl):not(.btn-xxl) {
     padding: 7px 15px;
     font-size: 14px;
   }
@@ -1306,7 +1327,10 @@ body[text=large-text] {
     position: relative;
     margin-top: 67px;
   }
-  .app-calendar .fc-header-toolbar .fc-toolbar-chunk:nth-child(2) .fc-toolbar-title {
+  .app-calendar
+    .fc-header-toolbar
+    .fc-toolbar-chunk:nth-child(2)
+    .fc-toolbar-title {
     margin-bottom: 53px;
     position: absolute;
     left: 50%;
@@ -1613,7 +1637,7 @@ body[text=large-text] {
     height: 100%;
     background: rgba(var(--dark) 0.25);
     -webkit-backdrop-filter: blur(2px);
-            backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
     padding: 10px;
     text-align: center;
     z-index: 1;
@@ -1809,7 +1833,8 @@ body[text=large-text] {
   .app-datatable-default .paginate_button {
     padding: 0.375rem 0.75rem;
   }
-  .app-datatable-default .paginate_button.next, .app-datatable-default .paginate_button.previous {
+  .app-datatable-default .paginate_button.next,
+  .app-datatable-default .paginate_button.previous {
     display: none;
   }
   .hasWeeks {
@@ -1897,7 +1922,11 @@ body[text=large-text] {
   .app-wrapper nav.horizontal-sidebar {
     top: 52px;
   }
-  .profile-container .image-details .profile-pic .avatar-upload .avatar-preview {
+  .profile-container
+    .image-details
+    .profile-pic
+    .avatar-upload
+    .avatar-preview {
     width: 100px;
     height: 100px;
   }
@@ -2241,7 +2270,8 @@ body[text=large-text] {
   .footer-page ul li a {
     margin-right: 10px;
   }
-  .shape-breadcrumbs li :before, .shape-breadcrumbs li :after {
+  .shape-breadcrumbs li :before,
+  .shape-breadcrumbs li :after {
     content: "";
     position: absolute;
     width: 13px;
@@ -2252,7 +2282,8 @@ body[text=large-text] {
   .shape-breadcrumbs li {
     padding: 5px 14px;
   }
-  .shape-step li :before, .shape-step li :after {
+  .shape-step li :before,
+  .shape-step li :after {
     right: -10px;
   }
   .shape-step li {

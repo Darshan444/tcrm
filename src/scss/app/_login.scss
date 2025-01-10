@@ -7,7 +7,6 @@
     border-radius: var(--app-border-radius);
     overflow: hidden;
 
-
     .signup-content {
       span {
         img {
@@ -49,16 +48,15 @@
 
 .image-contentbox {
   background-color: rgba(var(--primary), 0.1);
-  .signup-bg-img{
-    img{
+  .signup-bg-img {
+    img {
       margin: auto;
       display: block;
     }
   }
 }
 
-// 
-
+//
 
 .login-form-container {
   background-image: url("/public/assets/images/background/06.png");
@@ -72,7 +70,6 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  
 
   .app-form {
     padding: 30px 30px;
@@ -86,7 +83,7 @@
 
     h3 {
       font-size: calc(20px + (28 - 20) * ((100vw - 300px) / (1920 - 300)));
-      color: rgb(var(--primary), .75);
+      color: rgb(var(--primary), 0.75);
       font-weight: 600;
     }
 

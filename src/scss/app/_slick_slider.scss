@@ -12,8 +12,8 @@
     // opacity: 0.4;
     transform: scale(0.9, 0.9);
     transition: all 0.4s ease-in-out;
-    &::before{
-      content: '';
+    &::before {
+      content: "";
       position: absolute;
       width: 100%;
       height: 100%;
@@ -22,11 +22,11 @@
     }
     &.slick-current {
       transform: scale(1, 1);
-        &:before{
-          background-color: transparent;
-        } 
+      &:before {
+        background-color: transparent;
+      }
     }
-    img{
+    img {
       width: 100%;
     }
   }
@@ -148,9 +148,9 @@
 
   .slick-prev:before,
   .slick-next:before {
-    font-family: "tabler-icons" !important; 
+    font-family: "tabler-icons" !important;
     font-size: 28px;
-    background-color: rgb(var(--primary), 0.9)!important;
+    background-color: rgb(var(--primary), 0.9) !important;
     width: 35px;
     height: 35px;
     border-radius: 50%;
@@ -190,48 +190,47 @@
   }
 }
 
-
 .slideshow {
   position: relative;
   z-index: 1;
   height: 100%;
   max-width: 700px;
   margin: 50px auto;
-  
+
   * {
     outline: none;
   }
-  
+
   .slider {
     box-shadow: 0 20px 50px -25px rgba(0, 0, 0, 1);
   }
-  
+
   .slider-track {
     transition: all 1s cubic-bezier(0.7, 0, 0.3, 1);
   }
-  
+
   .item {
     height: 100%;
     position: relative;
     z-index: 1;
-    
+
     img {
       width: 100%;
       transition: all 1s cubic-bezier(0.7, 0, 0.3, 1);
       transform: scale(1.2);
     }
-    
+
     &.slick-active img {
       transform: scale(1);
     }
   }
 }
-.lazy-item{
+.lazy-item {
   padding: 10px;
 }
 
-.carousel{
-  .carousel-caption{
+.carousel {
+  .carousel-caption {
     position: absolute;
     right: 15%;
     width: 100%;
@@ -242,7 +241,7 @@
     color: rgba(var(--dark), 1);
     font-weight: 600;
     text-align: center;
-    background: rgba(var(--light), .6);
+    background: rgba(var(--light), 0.6);
   }
 }
 

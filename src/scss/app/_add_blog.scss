@@ -18,26 +18,25 @@
 //     }
 // }
 .file-uploader {
-    input {
-        display: none;
-    }
-    label{
-        width: 100%;
-        height: 280px;
-        font-size: 2rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        border-radius: 20px;
-        border: 1px dashed rgba(var(--secondary),.4);
-        background-color: rgba(var(--light), .1
-        );
-    }
+  input {
+    display: none;
+  }
+  label {
+    width: 100%;
+    height: 280px;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+    border: 1px dashed rgba(var(--secondary), 0.4);
+    background-color: rgba(var(--light), 0.1);
+  }
 }
-.uploaded-image{
-    width: 400px;
-    height: 200px;
+.uploaded-image {
+  width: 400px;
+  height: 200px;
 }
 
 // >>-- 114 Add Blog end --<<

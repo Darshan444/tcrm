@@ -1,5 +1,5 @@
 // >>-- 33 Ratings css start --<<
-.rating{
+.rating {
   text-align: center;
   direction: rtl;
 }
@@ -12,14 +12,13 @@
   display: none;
 }
 
-.rating input[type="radio"]:checked~label {
+.rating input[type="radio"]:checked ~ label {
   color: rgba(var(--warning), 1);
 }
 
 .star-filled {
   color: rgba(var(--light), 1);
 }
-
 
 // hover feedback css start //
 .stars_rating {
@@ -34,13 +33,13 @@
 
 .stars .stars1 {
   position: relative;
-  color: rgba(var(--warning), 0.40);
+  color: rgba(var(--warning), 0.4);
   font-size: 3rem;
   cursor: pointer;
   padding: 0 0.3125rem;
 
   &:after {
-    content: '★';
+    content: "★";
     position: absolute;
     transform: translateX(-100%);
     top: 0rem;
@@ -54,16 +53,15 @@
 
 .stars:hover {
   .stars1 {
-    color: rgba(var(--warning), 0.50);
+    color: rgba(var(--warning), 0.5);
   }
 
-  .stars1:hover~* {
-    color: rgba(var(--warning), 0.20);
+  .stars1:hover ~ * {
+    color: rgba(var(--warning), 0.2);
   }
 }
 
 // hover feedback css end//
-
 
 // 1 to 10 rating css srart //
 .br-theme-bars-1to10 {
@@ -103,7 +101,6 @@
       align-items: center;
       margin-left: 10px;
     }
-
   }
 
   .br-readonly {
@@ -128,7 +125,6 @@
 }
 
 // 1 to 10 rating css end//
-
 
 // movie rating css start //
 .br-theme-bars-movie {
@@ -155,11 +151,10 @@
     text-align: center;
     font-weight: 600;
     display: block;
-    padding: .5em 0;
+    padding: 0.5em 0;
     color: rgb(var(--warning), 1) !important;
     font-weight: 600;
     font-size: 16px;
-
   }
 
   .br-readonly {
@@ -184,7 +179,6 @@
 }
 
 // movie rating css end //
-
 
 // square rating css start //
 .br-theme-bars-square {
@@ -217,7 +211,7 @@
       text-align: center;
       font-weight: 600;
       display: block;
-      padding: .5em 0;
+      padding: 0.5em 0;
       color: var(--font-light-color);
     }
   }
@@ -225,7 +219,6 @@
   .br-readonly a {
     cursor: default;
   }
-
 }
 
 .br-theme-bars-square .br-widget a.br-active,
@@ -235,7 +228,6 @@
 }
 
 // squre rating css end //
-
 
 // pill rating start //
 .br-theme-bars-pill {
@@ -296,7 +288,6 @@
         line-height: 1.4;
         color: rgb(var(--warning), 1);
         border-radius: 6px;
-
       }
     }
 
@@ -320,7 +311,6 @@
   }
 }
 
-
 .br-theme-bars-reversed .br-widget a.br-active,
 .br-theme-bars-reversed .br-widget a.br-selected {
   background-color: rgb(var(--warning), 1);
@@ -328,7 +318,6 @@
 }
 
 // reversed rating css end //
-
 
 // horizontal rating css //
 
@@ -369,9 +358,6 @@
     transition: 0.2s;
     color: #5333ed;
   }
-
-
-
 }
 
 .rating-container {
@@ -394,23 +380,22 @@
   .emoji {
     font-size: 30px;
   }
-  
+
   .text {
     display: inline-block;
     font-size: 14pt;
-
   }
-  
+
   .text label {
     font-size: 16pt;
   }
-  
+
   input {
     cursor: ew-resize;
   }
-  .emoji-slider{
-    .accent{
-      accent-color: rgba(var(--warning),1);
+  .emoji-slider {
+    .accent {
+      accent-color: rgba(var(--warning), 1);
     }
   }
 }
@@ -456,22 +441,21 @@
     }
   }
 
-  input:checked~label,
+  input:checked ~ label,
   label:hover,
-  label:hover~label {
+  label:hover ~ label {
     color: rgb(var(--warning));
   }
 
-  input:checked+label:hover,
-  input:checked~label:hover,
-  input:checked~label:hover~label,
-
-  label:hover~input:checked~label {
+  input:checked + label:hover,
+  input:checked ~ label:hover,
+  input:checked ~ label:hover ~ label,
+  label:hover ~ input:checked ~ label {
     color: rgb(var(--warning));
   }
 }
 // half star css end //
-input[type=range]::-webkit-slider-thumb {
-  background: #FF5733;
+input[type="range"]::-webkit-slider-thumb {
+  background: #ff5733;
 }
 // >>-- 33 Ratings css end --<<

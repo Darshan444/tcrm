@@ -1,6 +1,5 @@
 // >>-- 41 Timeline css --<<
 .app-timeline-box {
-
   position: relative;
   padding: 12px;
 
@@ -28,7 +27,6 @@
       border-radius: 10px;
       margin-left: 30px;
     }
-
   }
 }
 
@@ -39,7 +37,7 @@
     position: relative;
     padding-bottom: 2rem;
     width: 50%;
-    
+
     &:last-child {
       border-left: 0;
     }
@@ -102,7 +100,7 @@
 
     .conference-timeline-content {
       div:nth-child(3) {
-        z-index: 1111;  
+        z-index: 1111;
         background: var(--white);
         position: absolute;
         right: 0px;

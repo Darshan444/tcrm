@@ -5,7 +5,7 @@
     border-left: 0.13rem solid rgb(var(--primary), 1) !important;
     background: rgb(var(--primary), 0.1);
   }
- 
+
   .list-horizontal {
     .list-radius-left-horizontal {
       border-bottom-left-radius: 0rem !important;
@@ -64,7 +64,7 @@
     .list-group-item {
       display: flex;
       justify-content: space-between;
-      p{
+      p {
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
@@ -75,7 +75,7 @@
         color: rgb(var(--light), 1);
         background-color: rgb(var(--dark), 1);
         border-color: rgb(var(--dark), 1);
-        h6{
+        h6 {
           color: var(--white);
         }
       }

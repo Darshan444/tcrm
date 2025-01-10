@@ -1,14 +1,21 @@
 // >>-- 32 Divider css start --<<
 
-.app-divider-v{
+.app-divider-v {
   position: relative;
   white-space: nowrap;
-  background-color:transparent;
+  background-color: transparent;
   color: var(--font-color);
   //margin: 2rem 0;
   padding: 1.5rem 0;
   display: flex;
-  >p,h1,h2,h3,h4,h5,h6,span{
+  > p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  span {
     background-color: var(--white);
     z-index: 1;
     padding-right: 10px;
@@ -24,33 +31,47 @@
     top: calc(50% - 0.5px);
   }
 
-  &.dotted{
+  &.dotted {
     &:before {
       border-top-style: dotted;
     }
   }
 
-  &.dashed{
+  &.dashed {
     &:before {
       border-top-style: dashed;
     }
   }
 
-  &.justify-content-center{
-    >p,h1,h2,h3,h4,h5,h6,span{
+  &.justify-content-center {
+    > p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    span {
       padding-left: 10px;
     }
   }
 
-  &.justify-content-end{
-    >p,h1,h2,h3,h4,h5,h6,span{
+  &.justify-content-end {
+    > p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    span {
       padding-left: 10px;
       padding-right: 0;
     }
   }
 }
 
-.app-divider-h{
+.app-divider-h {
   position: relative;
   white-space: nowrap;
   background-color: var(--white);
@@ -67,7 +88,14 @@
     left: calc(50% - 0.5px);
   }
 
-  >p,h1,h2,h3,h4,h5,h6,span{
+  > p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  span {
     background-color: var(--white);
     z-index: 1;
     height: fit-content;
@@ -75,47 +103,61 @@
     padding-bottom: 10px;
   }
 
-  &.dotted{
+  &.dotted {
     &:before {
       border-left-style: dotted;
     }
   }
 
-  &.dashed{
+  &.dashed {
     &:before {
       border-left-style: dashed;
     }
   }
 
-  &.align-items-center{
-    >p,h1,h2,h3,h4,h5,h6,span{
+  &.align-items-center {
+    > p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    span {
       padding-top: 10px;
     }
   }
 
-  &.align-items-end{
-    >p,h1,h2,h3,h4,h5,h6,span{
+  &.align-items-end {
+    > p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    span {
       padding-top: 10px;
       padding-bottom: 0;
     }
   }
 }
-.divider-body{
+.divider-body {
   height: 150px;
 }
 @mixin divider_mixin($name, $color) {
-  .app-divider-v{
+  .app-divider-v {
     &.#{$name} {
       &:before {
-        border-top-color: rgba(#{$color},0.4);
+        border-top-color: rgba(#{$color}, 0.4);
       }
     }
   }
 
-  .app-divider-h{
+  .app-divider-h {
     &.#{$name} {
       &:before {
-        border-left-color: rgba(#{$color},0.4);
+        border-left-color: rgba(#{$color}, 0.4);
       }
     }
   }
@@ -126,4 +168,3 @@
 }
 
 // >>-- 32 Divider css start --<<
-

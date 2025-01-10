@@ -1,7 +1,5 @@
 // >>-- 68 7ropdown css start --<<
 
-
-
 .header-right {
   li {
     cursor: pointer;
@@ -39,7 +37,7 @@
     display: none;
   }
 }
-.form-dropdown{
+.form-dropdown {
   width: 250px;
 }
 @mixin dropdown($name, $color) {
@@ -51,10 +49,10 @@
       i {
         color: var(--white) !important;
       }
-      .dropdown-divider{
+      .dropdown-divider {
         border-top: 2px solid var(--white);
       }
-      .dropdown-item{
+      .dropdown-item {
         color: var(--white) !important;
       }
     }
@@ -65,7 +63,7 @@
 }
 
 .app-dropdown {
-  .dropdown-divider{
+  .dropdown-divider {
     margin: 0;
     border-top: 2px solid rgba(var(--secondary), 0.4);
   }
@@ -74,12 +72,12 @@
     width: 280px;
     border-radius: 5px;
     padding: 0;
-    border: 1px solid rgba(var(--secondary),.4);
-    &.menu-light{
-      .dropdown-item{
-        color: rgba(var(--dark),1) !important;
+    border: 1px solid rgba(var(--secondary), 0.4);
+    &.menu-light {
+      .dropdown-item {
+        color: rgba(var(--dark), 1) !important;
         i {
-          color: rgba(var(--dark),1) !important;
+          color: rgba(var(--dark), 1) !important;
         }
       }
     }
@@ -94,7 +92,7 @@
 
       i {
         font-size: 20px;
-        color: rgba(var(--secondary),1);
+        color: rgba(var(--secondary), 1);
       }
       &:hover {
         background-color: rgba(var(--light), 0.2);
@@ -145,5 +143,3 @@
 }
 
 // >>-- 67 Dropdown css end --<<
-
-

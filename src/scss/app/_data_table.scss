@@ -27,7 +27,9 @@
   }
 
   table {
-    tr, th, td {
+    tr,
+    th,
+    td {
       box-shadow: none !important;
     }
 
@@ -46,7 +48,6 @@
           padding-right: 20px !important;
         }
       }
-
     }
 
     tbody {
@@ -70,15 +71,14 @@
           background-color: rgba(var(--light), 0.2);
         }
         &:last-child {
-          td{
-            border-bottom:1px dashed rgba(var(--secondary), 0.4)  !important;
+          td {
+            border-bottom: 1px dashed rgba(var(--secondary), 0.4) !important;
           }
         }
       }
-
     }
 
-    tfoot{
+    tfoot {
       border: none !important;
     }
   }
@@ -89,11 +89,8 @@
     .checkmark {
       border-radius: 5px;
       border: 2px solid rgba(var(--dark), 0.4);
-
     }
-
   }
-
 }
 
 .default-data-table {

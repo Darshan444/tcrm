@@ -1,7 +1,7 @@
 // >>-- 30 Form_wizard css start --<<
 
 .form-wizard {
-  .form-wizard-header{
+  .form-wizard-header {
     position: relative;
   }
   .form-wizard-steps {
@@ -12,12 +12,12 @@
     li {
       width: calc(50% - 30px);
       position: relative;
-      span{
+      span {
         display: inline-block;
       }
-      &:last-child{
+      &:last-child {
         width: 60px;
-        &:after{
+        &:after {
           content: none;
         }
       }
@@ -57,8 +57,8 @@
       }
     }
   }
-  .vertica-wizard-steps{
-    li{
+  .vertica-wizard-steps {
+    li {
       position: relative;
       .wizard-steps {
         background-color: rgba(var(--secondary), 1);
@@ -119,4 +119,3 @@
 }
 
 // >>-- 30 Form_wizard css end --<<
-

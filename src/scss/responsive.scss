@@ -7,7 +7,6 @@
     tbody {
       tr {
         td {
-
           h6,
           p {
             max-width: 100px;
@@ -24,7 +23,6 @@
 @media screen and (max-width: 1660px) and (min-width: 1400px) {
   .draggable-share-list {
     .share-menu-content {
-
       p,
       h6 {
         max-width: 60px;
@@ -41,7 +39,6 @@
         white-space: nowrap;
         overflow: hidden;
       }
-
     }
   }
 
@@ -316,8 +313,6 @@
   }
 
   .address-content {
-
-
     .check-box {
       span {
         max-width: 100%;
@@ -370,7 +365,6 @@
     }
   }
 
-
   .card-placeholder {
     & .card-responsive {
       overflow: hidden;
@@ -378,10 +372,7 @@
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
-
     }
-
-
   }
 
   .api-eshop-card {
@@ -468,7 +459,6 @@
   }
 
   .contact-listbox {
-
     p,
     h6 {
       overflow: hidden;
@@ -548,7 +538,6 @@
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
-
     }
   }
 
@@ -653,7 +642,7 @@
   }
 }
 
-@media screen and (max-width: 1366px) and (min-width: 1200px){
+@media screen and (max-width: 1366px) and (min-width: 1200px) {
   .mail-box {
     .form-check-input {
       display: none;
@@ -671,7 +660,6 @@
         overflow: hidden;
       }
     }
-
   }
 
   .api-chart {
@@ -691,7 +679,6 @@
         bottom: 0;
       }
     }
-
   }
   .content-overlay {
     &:hover {
@@ -795,7 +782,6 @@
   .tochspin-pre-class {
     display: none;
   }
-
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -897,7 +883,6 @@
     .custome-wrapper-2-content {
       padding: 0 0.5rem;
     }
-
   }
 
   .app-countdown-background {
@@ -955,7 +940,7 @@
       }
     }
   }
-  nav.horizontal-sidebar ~ .app-content .header-main > .container-fluid > .row  {
+  nav.horizontal-sidebar ~ .app-content .header-main > .container-fluid > .row {
     width: 100% !important;
   }
 }
@@ -1011,8 +996,8 @@
   }
 }
 
-@media screen and (max-width: 1199px){
-  nav  {
+@media screen and (max-width: 1199px) {
+  nav {
     .app-logo {
       padding: 0;
     }
@@ -1100,7 +1085,7 @@
     }
   }
 
-  // setting security 
+  // setting security
   .security-box-card {
     .security-discription {
       p {
@@ -1276,7 +1261,6 @@
 
   .footer-page {
     .footer-title {
-
       img {
         width: 112px !important;
       }
@@ -1304,9 +1288,7 @@
         height: 25px !important;
         width: 25px !important;
         padding: 4px;
-
       }
-
     }
 
     .footer-sub {
@@ -1359,7 +1341,6 @@
         overflow: hidden;
       }
     }
-
   }
 
   .block-card-list {
@@ -1373,7 +1354,6 @@
   }
 
   .security-box-card {
-
     img,
     .anti-code {
       width: 30px !important;
@@ -1391,7 +1371,6 @@
       p {
         font-size: 14px !important;
       }
-
     }
   }
 
@@ -1408,7 +1387,7 @@
   }
   .popular-blog-list {
     .position-relative {
-      &:nth-of-type(n+5) {
+      &:nth-of-type(n + 5) {
         display: none;
       }
     }
@@ -1424,7 +1403,6 @@
         width: 45% !important;
       }
     }
-
   }
 
   .app-color-toast {
@@ -1439,8 +1417,8 @@
   .order-lg--1 {
     order: -1;
   }
-  .product-header{
-    .app-form{
+  .product-header {
+    .app-form {
       width: 100%;
     }
   }
@@ -1458,7 +1436,6 @@
     .app-logo {
       padding: 0;
     }
-
   }
   nav.horizontal-sidebar:not(.semi-nav) .app-logo .logo img {
     width: 130px;
@@ -1640,9 +1617,7 @@
 
   .app-color-toast {
     width: 100%;
-
   }
-
 
   .mail-box {
     gap: 0 !important;
@@ -1678,7 +1653,7 @@
         -webkit-box-orient: vertical;
       }
     }
-    .mg-s-50{
+    .mg-s-50 {
       margin-left: 0 !important;
     }
   }
@@ -1716,9 +1691,7 @@
       .social-btn {
         justify-content: center;
       }
-
     }
-
   }
 
   .content-overlay-text {
@@ -1734,7 +1707,6 @@
       -webkit-box-orient: vertical;
     }
   }
-
 
   .share-menu-icons {
     display: none;
@@ -1755,7 +1727,6 @@
       }
     }
   }
-
 
   //.chattoggle {
   //  width: calc(100% - 300px);
@@ -1785,7 +1756,6 @@
         height: 25px;
       }
     }
-
   }
   .dataTables_length,
   .dataTables_info {
@@ -1803,12 +1773,9 @@
       display: none;
     }
   }
-
-
 }
 
 @media screen and (max-width: 768px) {
-
   .app-calendar {
     .fc-toolbar-title {
       font-size: 16px;
@@ -1868,7 +1835,6 @@
         position: absolute;
         bottom: 25px;
       }
-
     }
 
     .person-details {
@@ -1876,22 +1842,21 @@
     }
   }
   .app-timeline-box {
-    &.activity-timeline{
+    &.activity-timeline {
       .timeline-section {
         .timeline-content {
           padding: 0;
         }
       }
     }
-    
   }
-  header{
+  header {
     &.header-main {
-       .header-left{
-         .header-toggle{
-           margin-left: 0.5rem;
-         }
-       }
+      .header-left {
+        .header-toggle {
+          margin-left: 0.5rem;
+        }
+      }
     }
   }
 }
@@ -1913,10 +1878,8 @@
           font-size: 18px;
         }
       }
-
     }
   }
-
 }
 
 @media screen and (max-width: 576px) {
@@ -1939,8 +1902,6 @@
       left: 0;
     }
   }
-
-
 
   .vertical-right-tab,
   .vertical-tab {
@@ -1981,7 +1942,6 @@
   .app-countdown-day-hou-min-sec-2 {
     & .timer {
       .countdown {
-
         .minutes,
         .hours,
         .days,
@@ -2013,7 +1973,6 @@
 
   .app-color-toast {
     width: 100%;
-
   }
 
   .circle-breadcrumbs,
@@ -2176,7 +2135,6 @@
     }
   }
 
-
   .list-content {
     .d-flex {
       flex-wrap: wrap;
@@ -2219,7 +2177,6 @@
   }
 
   .updating-btn-box {
-
     .btn-group-sm > .btn,
     .btn-sm {
       width: 100%;
@@ -2244,7 +2201,6 @@
   }
 
   .touchspin-with-dropdown {
-
     .decrement,
     .increment,
     .tochspin-pre-class {
@@ -2253,7 +2209,6 @@
   }
 
   .touchspin-with-PostPre {
-
     .decrement,
     .increment {
       display: none;
@@ -2273,8 +2228,6 @@
       }
     }
   }
-
- 
 
   .step-status {
     .nav-link {
@@ -2366,7 +2319,6 @@
   }
 
   .tab-card {
-
     .nav-item,
     .nav-link {
       width: 100%;
@@ -2423,7 +2375,6 @@
     .account-security-img {
       text-align: center;
     }
-
   }
 
   .book-mark-card {
@@ -2459,7 +2410,6 @@
   }
 
   .app-side-timeline {
-
     .timeline-content {
       padding: 0 !important;
     }
@@ -2550,7 +2500,7 @@
   .rounded-breadcrumbs {
     li {
       a {
-        padding: 11px 15px;;
+        padding: 11px 15px;
       }
 
       :after {
@@ -2561,7 +2511,6 @@
         padding: 11px 15px;
       }
     }
-
   }
 
   .shape-step {
@@ -2684,7 +2633,7 @@
         border: none;
         border-radius: inherit;
         text-align: center;
-        border: 1px solid rgba(var(--secondary), .4);
+        border: 1px solid rgba(var(--secondary), 0.4);
 
         &.active {
           background-color: rgba(var(--primary), 1);
@@ -2704,7 +2653,7 @@
       margin-top: 0.75rem;
     }
   }
-  .list-view{
+  .list-view {
     .product-image {
       .images_box,
       .pic-1 {
@@ -2712,10 +2661,10 @@
       }
     }
   }
-  .ticket-comment-box{
-    .position-relative{
+  .ticket-comment-box {
+    .position-relative {
       flex-direction: column;
-      .flex-grow-1{
+      .flex-grow-1 {
         margin-top: 50px;
         padding: 0 !important;
       }
@@ -2724,28 +2673,30 @@
       margin-left: 0 !important;
     }
   }
-  .footer-page{
-    .footer-list{
-      .justify-content-end{
+  .footer-page {
+    .footer-list {
+      .justify-content-end {
         justify-content: center !important;
       }
     }
   }
-  .footer-section{
-    .footer-list{
+  .footer-section {
+    .footer-list {
       display: none;
     }
   }
 }
 
 @media screen and (max-width: 480px) {
-
-
   .app-wrapper nav.horizontal-sidebar {
     top: 52px;
   }
 
-  .profile-container .image-details .profile-pic .avatar-upload .avatar-preview {
+  .profile-container
+    .image-details
+    .profile-pic
+    .avatar-upload
+    .avatar-preview {
     width: 100px;
     height: 100px;
   }
@@ -2839,7 +2790,6 @@
       gap: 8px;
 
       .countdown {
-
         .hours,
         .minutes,
         .seconds,
@@ -2938,7 +2888,6 @@
       height: 45px !important;
     }
   }
-
 
   .product-details-contentbox {
     .option-color-list {
@@ -3062,7 +3011,6 @@
         font-size: 12px;
       }
     }
-
   }
 
   .copy-clipboard {
@@ -3070,7 +3018,7 @@
       margin-bottom: 10px;
     }
   }
-  .product-header{
+  .product-header {
     flex-direction: column;
     align-items: start !important;
   }
@@ -3109,7 +3057,6 @@
     tbody {
       tr {
         td {
-
           h6,
           p {
             max-width: 100px;
@@ -3121,7 +3068,6 @@
       }
     }
   }
-
 
   .custome-wrapper-2,
   .custome-wrapper-3 {
@@ -3172,7 +3118,6 @@
   }
 
   .setting-privacy-card {
-
     .form-check-input {
       width: 18px !important;
       height: 18px !important;
@@ -3224,14 +3169,12 @@
     }
   }
 
-
   //  subscription page //
   .plan-choose {
     button {
       font-size: 11px;
       padding: 4px 10px;
     }
-
   }
 
   .subscription-plan {
@@ -3255,7 +3198,6 @@
     }
   }
 
-
   .activity-time {
     flex-direction: column;
     gap: 5px;
@@ -3263,7 +3205,6 @@
 
   .app-timeline-box {
     .timeline-section {
-
       p {
         font-size: 13px;
       }
@@ -3346,7 +3287,8 @@
       }
     }
   }
-  .shape-breadcrumbs li :before, .shape-breadcrumbs li :after {
+  .shape-breadcrumbs li :before,
+  .shape-breadcrumbs li :after {
     content: "";
     position: absolute;
     width: 13px;
@@ -3357,11 +3299,11 @@
   .shape-breadcrumbs li {
     padding: 5px 14px;
   }
-  .shape-step li :before, .shape-step li :after {
+  .shape-step li :before,
+  .shape-step li :after {
     right: -10px;
   }
   .shape-step li {
     margin-left: -3px;
   }
 }
-

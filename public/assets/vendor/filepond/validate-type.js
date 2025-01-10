@@ -6,15 +6,15 @@
 
 /* eslint-disable */
 
-(function(global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined'
+(function (global, factory) {
+  typeof exports === "object" && typeof module !== "undefined"
     ? (module.exports = factory())
-    : typeof define === 'function' && define.amd
-    ? define(factory)
-    : ((global = global || self),
-      (global.FilePondPluginFileValidateType = factory()));
-})(this, function() {
-  'use strict';
+    : typeof define === "function" && define.amd
+      ? define(factory)
+      : ((global = global || self),
+        (global.FilePondPluginFileValidateType = factory()));
+})(this, function () {
+  "use strict";
 
   var plugin = function plugin(_ref) {
     var addFilter = _ref.addFilter,
@@ -29,7 +29,7 @@
 
     var mimeTypeMatchesWildCard = function mimeTypeMatchesWildCard(
       mimeType,
-      wildcard
+      wildcard,
     ) {
       var mimeTypeGroup = (/^[^/]+/.exec(mimeType) || []).pop(); // image/png -> image
       var wildcardGroup = wildcard.slice(0, -2); // image/* -> image
@@ -38,9 +38,9 @@
 
     var isValidMimeType = function isValidMimeType(
       acceptedTypes,
-      userInputType
+      userInputType,
     ) {
-      return acceptedTypes.some(function(acceptedType) {
+      return acceptedTypes.some(function (acceptedType) {
         // accepted is wildcard mime type
         if (/\*$/.test(acceptedType)) {
           return mimeTypeMatchesWildCard(userInputType, acceptedType);
@@ -53,7 +53,7 @@
 
     var getItemType = function getItemType(item) {
       // if the item is a url we guess the mime type by the extension
-      var type = '';
+      var type = "";
       if (isString(item)) {
         var filename = getFilenameFromURL(item);
         var extension = getExtensionFromFilename(filename);
@@ -70,7 +70,7 @@
     var validateFile = function validateFile(
       item,
       acceptedFileTypes,
-      typeDetector
+      typeDetector,
     ) {
       // no types defined, everything is allowed \o/
       if (acceptedFileTypes.length === 0) {
@@ -86,9 +86,9 @@
       }
 
       // use type detector
-      return new Promise(function(resolve, reject) {
+      return new Promise(function (resolve, reject) {
         typeDetector(item, type)
-          .then(function(detectedType) {
+          .then(function (detectedType) {
             if (isValidMimeType(acceptedFileTypes, detectedType)) {
               resolve();
             } else {
@@ -100,7 +100,7 @@
     };
 
     var applyMimeTypeMap = function applyMimeTypeMap(map) {
-      return function(acceptedFileType) {
+      return function (acceptedFileType) {
         return map[acceptedFileType] === null
           ? false
           : map[acceptedFileType] || acceptedFileType;
@@ -108,86 +108,86 @@
     };
 
     // setup attribute mapping for accept
-    addFilter('SET_ATTRIBUTE_TO_OPTION_MAP', function(map) {
+    addFilter("SET_ATTRIBUTE_TO_OPTION_MAP", function (map) {
       return Object.assign(map, {
-        accept: 'acceptedFileTypes'
+        accept: "acceptedFileTypes",
       });
     });
 
     // filtering if an item is allowed in hopper
-    addFilter('ALLOW_HOPPER_ITEM', function(file, _ref2) {
+    addFilter("ALLOW_HOPPER_ITEM", function (file, _ref2) {
       var query = _ref2.query;
       // if we are not doing file type validation exit
-      if (!query('GET_ALLOW_FILE_TYPE_VALIDATION')) {
+      if (!query("GET_ALLOW_FILE_TYPE_VALIDATION")) {
         return true;
       }
 
       // we validate the file against the accepted file types
-      return validateFile(file, query('GET_ACCEPTED_FILE_TYPES'));
+      return validateFile(file, query("GET_ACCEPTED_FILE_TYPES"));
     });
 
     // called for each file that is loaded
     // right before it is set to the item state
     // should return a promise
-    addFilter('LOAD_FILE', function(file, _ref3) {
+    addFilter("LOAD_FILE", function (file, _ref3) {
       var query = _ref3.query;
-      return new Promise(function(resolve, reject) {
-        if (!query('GET_ALLOW_FILE_TYPE_VALIDATION')) {
+      return new Promise(function (resolve, reject) {
+        if (!query("GET_ALLOW_FILE_TYPE_VALIDATION")) {
           resolve(file);
           return;
         }
 
-        var acceptedFileTypes = query('GET_ACCEPTED_FILE_TYPES');
+        var acceptedFileTypes = query("GET_ACCEPTED_FILE_TYPES");
 
         // custom type detector method
-        var typeDetector = query('GET_FILE_VALIDATE_TYPE_DETECT_TYPE');
+        var typeDetector = query("GET_FILE_VALIDATE_TYPE_DETECT_TYPE");
 
         // if invalid, exit here
         var validationResult = validateFile(
           file,
           acceptedFileTypes,
-          typeDetector
+          typeDetector,
         );
 
         var handleRejection = function handleRejection() {
           var acceptedFileTypesMapped = acceptedFileTypes
             .map(
               applyMimeTypeMap(
-                query('GET_FILE_VALIDATE_TYPE_LABEL_EXPECTED_TYPES_MAP')
-              )
+                query("GET_FILE_VALIDATE_TYPE_LABEL_EXPECTED_TYPES_MAP"),
+              ),
             )
-            .filter(function(label) {
+            .filter(function (label) {
               return label !== false;
             });
 
           var acceptedFileTypesMapped_unique = acceptedFileTypesMapped.filter(
-            function(item, index) {
+            function (item, index) {
               return acceptedFileTypesMapped.indexOf(item) === index;
-            }
+            },
           );
 
           reject({
             status: {
-              main: query('GET_LABEL_FILE_TYPE_NOT_ALLOWED'),
+              main: query("GET_LABEL_FILE_TYPE_NOT_ALLOWED"),
               sub: replaceInString(
-                query('GET_FILE_VALIDATE_TYPE_LABEL_EXPECTED_TYPES'),
+                query("GET_FILE_VALIDATE_TYPE_LABEL_EXPECTED_TYPES"),
                 {
-                  allTypes: acceptedFileTypesMapped_unique.join(', '),
+                  allTypes: acceptedFileTypesMapped_unique.join(", "),
                   allButLastType: acceptedFileTypesMapped_unique
                     .slice(0, -1)
-                    .join(', '),
+                    .join(", "),
                   lastType:
                     acceptedFileTypesMapped_unique[
                       acceptedFileTypesMapped.length - 1
-                    ]
-                }
-              )
-            }
+                    ],
+                },
+              ),
+            },
           });
         };
 
         // has returned new filename immidiately
-        if (typeof validationResult === 'boolean') {
+        if (typeof validationResult === "boolean") {
           if (!validationResult) {
             return handleRejection();
           }
@@ -196,7 +196,7 @@
 
         // is promise
         validationResult
-          .then(function() {
+          .then(function () {
             resolve(file);
           })
           .catch(handleRejection);
@@ -218,29 +218,29 @@
         // - wildcards: image/*
 
         // label to show when a type is not allowed
-        labelFileTypeNotAllowed: ['File is of invalid type', Type.STRING],
+        labelFileTypeNotAllowed: ["File is of invalid type", Type.STRING],
 
         // nicer label
         fileValidateTypeLabelExpectedTypes: [
-          'Expects {allButLastType} or {lastType}',
-          Type.STRING
+          "Expects {allButLastType} or {lastType}",
+          Type.STRING,
         ],
 
         // map mime types to extensions
         fileValidateTypeLabelExpectedTypesMap: [{}, Type.OBJECT],
 
         // Custom function to detect type of file
-        fileValidateTypeDetectType: [null, Type.FUNCTION]
-      }
+        fileValidateTypeDetectType: [null, Type.FUNCTION],
+      },
     };
   };
 
   // fire pluginloaded event if running in browser, this allows registering the plugin when using async script tags
   var isBrowser =
-    typeof window !== 'undefined' && typeof window.document !== 'undefined';
+    typeof window !== "undefined" && typeof window.document !== "undefined";
   if (isBrowser) {
     document.dispatchEvent(
-      new CustomEvent('FilePond:pluginloaded', { detail: plugin })
+      new CustomEvent("FilePond:pluginloaded", { detail: plugin }),
     );
   }
 

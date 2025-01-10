@@ -11,7 +11,7 @@
 }
 
 .chat-container-content-box {
-  border-left: 1px solid rgba(var(--secondary), .4);
+  border-left: 1px solid rgba(var(--secondary), 0.4);
 }
 
 .chat-tab-wrapper {
@@ -20,7 +20,6 @@
     justify-content: space-between;
     border-radius: var(--bs-border-radius);
 
-
     .tab-link {
       width: 100%;
       text-align: center;
@@ -28,7 +27,7 @@
       list-style: none;
       padding: 16px 0px;
       font-weight: 500;
-      color: rgba(var(--dark),.75);
+      color: rgba(var(--dark), 0.75);
       cursor: pointer;
       border-bottom: solid 2px transparent;
       letter-spacing: 1px;
@@ -163,7 +162,7 @@
     .nav-link {
       padding: 0.8rem 0.75rem;
       background-color: transparent;
-      border: 1px solid rgba(var(--secondary), .4);
+      border: 1px solid rgba(var(--secondary), 0.4);
       color: rgba(var(--secondary), 1) !important;
       width: 100%;
     }
@@ -198,14 +197,14 @@
 
   .chat-time {
     margin-bottom: 0;
-    color: rgba(var(--dark),.75);
+    color: rgba(var(--dark), 0.75);
   }
 
   .chat-contactbox {
     position: relative;
     display: flex;
     padding: 1rem 0;
-    .position-absolute{
+    .position-absolute {
       top: 12px;
     }
 
@@ -232,8 +231,8 @@
   }
 }
 
-.chat-contact-list{
-  p{
+.chat-contact-list {
+  p {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;

@@ -1,5 +1,5 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -7,25 +7,30 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        silenceDeprecations: ['mixed-decls', 'color-functions', 'global-builtin', 'import']
+        silenceDeprecations: [
+          "mixed-decls",
+          "color-functions",
+          "global-builtin",
+          "import",
+        ],
       },
-    }
+    },
   },
   resolve: {
     alias: {
-      '@': '/src',
+      "@": "/src",
     },
   },
   esbuild: {
-    loader: 'jsx',
+    loader: "jsx",
     include: /.*\.jsx?$/,
     exclude: [],
   },
   build: {
     sourcemap: false,
-    outDir: 'dist',
+    outDir: "dist",
     manualChunks: {
-      vendor: ['react-dom/client'],
+      vendor: ["react-dom/client"],
     },
   },
   optimizeDeps: {
@@ -34,8 +39,8 @@ export default defineConfig({
     },
     esbuildOptions: {
       loader: {
-        '.js': 'jsx',
+        ".js": "jsx",
       },
     },
   },
-})
+});
