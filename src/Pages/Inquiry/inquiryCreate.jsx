@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 // import TextEditor from "@/Components/AddProduct/TextEditor";
 // import CustomSelect from "@/Components/AddProduct/CustomSelect";
 // import {options, options2} from "@/Components/AddProduct/addProductData";
 // import UploadProduct from "@/Components/AddProduct/UploadProduct";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import TextEditor from "@/Components/FormElement/TextEditor";
+import CustomSelect from "@/Components/FormElement/CustomSelect";
+// import CustomSelectWithAddValue from "@/Components/FormElement/CustomSelectWithAddValue";
+import { INQUIRY_PRIORITY_OPTION } from "./constant";
+import { Card, CardBody, Col, FormGroup, Input, Label, Row } from "reactstrap";
+import Flatpickr from 'react-flatpickr';
 import("../../../public/assets/vendor/select/select2.min");
 
 const InquiryCreate = () => {
+
+  const [range, setRange] = useState([null, null]);
+
   return (
     <div className="container-fluid">
       <div className="row m-1">
@@ -28,342 +37,237 @@ const InquiryCreate = () => {
           </ul>
         </div>
       </div>
+
       <div className="row">
-        <div className="col-lg-8">
-          <div className="card">
-            <div className="card-body">
-              <div className="app-product-section">
-                <div className="main-title">
-                  <h6>General Information</h6>
-                </div>
-                <div>
-                  <form className="app-form">
-                    <div className="mb-3">
-                      <label className="form-label">Product Title</label>
-                      <input type="text" className="form-control" />
-                    </div>
-                    <div className="mb-3">
-                      <label className="form-label">Brand Name</label>
-                      <input type="text" className="form-control" />
-                    </div>
-                    <div className="mb-3">
-                      <label className="form-label">Product Description</label>
-                      {/* <TextEditor/> */}
-                    </div>
-                  </form>
-                </div>
-                <div className="app-divider-v dashed" />
-                <div className="main-title">
-                  <h6>Category</h6>
-                </div>
-                <div>
-                  <form className="app-form">
-                    <div className="row">
-                      <div className="col-md-6">
-                        <div className="mb-3">
-                          <label className="form-label">Product Category</label>
-                          {/* <CustomSelect options={options}/> */}
-                        </div>
-                      </div>
-                      <div className="col-md-6">
-                        <div className="mb-3">
-                          <label className="form-label">Product Tags</label>
-                          {/* <CustomSelect options={options2}/> */}
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-                <div className="app-divider-v dashed" />
-                <div className="main-title">
-                  <h6>Inventory</h6>
-                </div>
-                <div>
-                  <form className="app-form">
-                    <div className="row">
-                      <div className="col-md-3">
-                        <div className="mb-3">
-                          <label className="form-label">SKU(Optional)</label>
-                          <input type="text" className="form-control" />
-                        </div>
-                      </div>
-                      <div className="col-md-6">
-                        <div className="mb-3">
-                          <label className="form-label">Barcode</label>
-                          <input type="text" className="form-control" />
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="mb-3">
-                          <label className="form-label">Quantity</label>
-                          <input type="text" className="form-control" />
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-                <div className="app-divider-v dashed" />
-                <div className="main-title">
-                  <h6>Shipping</h6>
-                </div>
-                <form className="app-form">
-                  <div className="row">
-                    <div className="col-md-6">
-                      <div className="mb-3">
-                        <label className="form-label">Weight</label>
-                        <input type="text" className="form-control" />
-                        <div className="form-text">
-                          Package Size(The package you use to ship your product)
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-md-6">
-                      <div className="mb-3">
-                        <label className="form-label">Shipping Days</label>
-                        <input type="text" className="form-control" />
-                      </div>
-                    </div>
-                    <div className="col-md-4">
-                      <div className="mb-3">
-                        <label className="form-label">Length</label>
-                        <input type="text" className="form-control" />
-                      </div>
-                    </div>
-                    <div className="col-md-4">
-                      <div className="mb-3">
-                        <label className="form-label">Breadth</label>
-                        <input type="text" className="form-control" />
-                      </div>
-                    </div>
-                    <div className="col-md-4">
-                      <div className="mb-3">
-                        <label className="form-label">Width</label>
-                        <input type="text" className="form-control" />
-                      </div>
-                    </div>
-                    <div className="col-12">
-                      <div className="mt-4 text-end">
-                        <button
-                          type="button"
-                          className="btn btn-light-secondary"
-                        >
-                          Discard
-                        </button>
-                        <Link
-                          to="/apps/e-shop/product-details"
-                          role="button"
-                          className="btn btn-primary ms-1"
-                        >
-                          Add Product
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </form>
-              </div>
+        <div className="card">
+          <div className="card-body">
+
+            <div className="main-title">
+              <h6>General Information</h6>
             </div>
-          </div>
-        </div>
-        <div className="col-lg-4">
-          <div className="card">
-            <div className="card-body">
-              <div className="app-product-section">
-                <div className="main-title">
-                  <h6>Product Media</h6>
+
+            <div>
+              <form className="app-form">
+                <div className="mb-3">
+                  <label className="form-label">Inquiry Title</label>
+                  <input type="text" className="form-control" />
                 </div>
-                {/* <UploadProduct/> */}
-                <div className="app-divider-v dashed" />
-                <div className="main-title">
-                  <h6>Pricing</h6>
-                </div>
-                <form className="app-form">
-                  <div className="row">
-                    <div className="col-12">
-                      <div className="mb-3">
-                        <label className="form-label">Price</label>
-                        <div className="input-group mb-3">
-                          <span
-                            className="input-group-text b-r-left"
-                            id="basic-addon1"
-                          >
-                            $
-                          </span>
-                          <input
-                            type="text"
-                            className="form-control b-r-right"
-                            aria-label="Username"
-                            aria-describedby="basic-addon1"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-12">
-                      <div className="mb-3">
-                        <label className="form-label">Compare at price</label>
-                        <div className="input-group mb-3">
-                          <span
-                            className="input-group-text b-r-left"
-                            id="basic-addon2"
-                          >
-                            $
-                          </span>
-                          <input
-                            type="text"
-                            className="form-control b-r-right"
-                            aria-label="Username"
-                            aria-describedby="basic-addon1"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-12">
-                      <div className="mb-3">
-                        <label className="form-label">Discount(%)</label>
-                        <input type="text" className="form-control" />
-                      </div>
-                    </div>
-                    <div className="col-12">
-                      <div className="mb-3">
-                        <label className="form-label">Discount Type</label>
-                        <input type="text" className="form-control" />
-                      </div>
-                    </div>
-                  </div>
-                </form>
-                <div className="app-divider-v dashed" />
-                <div>
-                  <div className="main-title">
-                    <h6>Product Variants</h6>
-                  </div>
-                  <div className="variants-box">
-                    <a
-                      role="button"
-                      className="text-primary"
-                      data-bs-toggle="modal"
-                      data-bs-target="#exampleModal"
-                    >
-                      <i className="ti ti-plus" /> Add Variants
-                    </a>
-                  </div>
-                  <div
-                    className="modal fade"
-                    id="exampleModal"
-                    tabIndex="-1"
-                    aria-labelledby="exampleModalLabel"
-                    aria-hidden="true"
-                  >
-                    <div className="modal-dialog">
-                      <div className="modal-content">
-                        <div className="modal-header">
-                          <h1
-                            className="modal-title fs-5"
-                            id="exampleModalLabel"
-                          >
-                            Modal title
-                          </h1>
-                          <button
-                            type="button"
-                            className="btn-close"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                          />
-                        </div>
-                        <div className="modal-body">
-                          <form className="app-form">
-                            <div className="mb-3">
-                              <label className="form-label">City</label>
-                              <select className="form-select" defaultValue="1">
-                                <option>select Option</option>
-                                <option value="1">Size</option>
-                                <option value="2">Weight</option>
-                                <option value="3">Color</option>
-                              </select>
-                            </div>
-                            <div className="mb-3">
-                              <label className="form-label">
-                                Product Height
-                              </label>
-                              <input
-                                type="number"
-                                className="form-control"
-                                placeholder="Enter Number"
-                              />
-                            </div>
-                          </form>
-                        </div>
-                        <div className="modal-footer">
-                          <button
-                            type="button"
-                            className="btn btn-secondary"
-                            data-bs-dismiss="modal"
-                          >
-                            Close
-                          </button>
-                          <button
-                            type="button"
-                            className="btn btn-primary"
-                            data-bs-dismiss="modal"
-                          >
-                            Add Variants
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="app-divider-v dashed" />
-                <div className="main-title">
-                  <h6>Visibility</h6>
-                </div>
-                <div>
-                  <div className="form-check d-flex align-items-center mt-2">
-                    <input
-                      className="form-check-input f-s-18 mb-1 m-1"
-                      type="radio"
-                      name="flexRadioDefault"
-                      id="Visibility_1"
-                    />
-                    <label className="form-check-label" htmlFor="Visibility_1">
-                      Published
-                    </label>
-                  </div>
-                  <div className="form-check d-flex align-items-center mt-2">
-                    <input
-                      className="form-check-input f-s-18 mb-1 m-1"
-                      type="radio"
-                      name="flexRadioDefault"
-                      id="Visibility_2"
-                    />
-                    <label className="form-check-label" htmlFor="Visibility_2">
-                      Schedule
-                    </label>
-                  </div>
-                  <div className="form-check d-flex align-items-center mt-2">
-                    <input
-                      className="form-check-input f-s-18 mb-1 m-1"
-                      type="radio"
-                      name="flexRadioDefault"
-                      id="Visibility_3"
-                    />
-                    <label className="form-check-label" htmlFor="Visibility_3">
-                      Hidden
-                    </label>
-                  </div>
-                </div>
-                <form className="app-form mt-4  ">
-                  <div className="mb-3">
-                    <label className="form-label">Publish Date</label>
+
+                <div className="row">
+                  <div className="col-md-4 mb-3">
+                    <label className="form-label">Customer Name</label>
                     <input type="text" className="form-control" />
-                    <div className="form-text">
-                      The category will not be visible until the specified date.
+                  </div>
+                  <div className="col-md-4 mb-3">
+                    <label className="form-label">Customer No</label>
+                    <input type="number" className="form-control" />
+                  </div>
+                  <div className="col-md-4 mb-3">
+                    <label className="form-label">Customer Email</label>
+                    <input type="email" className="form-control" />
+                  </div>
+                </div>
+
+                <div className="row">
+                  <div className="col-md-4 mb-3">
+                    <label className="form-label">No Of Person</label>
+                    <input type="number" className="form-control" />
+                  </div>
+                  <div className="col-md-4 mb-3">
+                    <label className="form-label">Adult (18+)</label>
+                    <input type="number" className="form-control" />
+                  </div>
+                  <div className="col-md-4 mb-3">
+                    <label className="form-label">Child (below 18)</label>
+                    <input type="number" className="form-control" />
+                  </div>
+                </div>
+
+                <div className="row">
+                  <div className="col-md-4 mb-3">
+                    <label className="form-label">Inquiry Priority</label>
+                    <CustomSelect options={INQUIRY_PRIORITY_OPTION} />
+                  </div>
+                  <div className="col-md-4 mb-3">
+                    <Label for="dateInput" className="form-label">Followup Date</Label>
+                    <Input type="date" id="dateInput" className="form-control" />
+                  </div>
+                </div>
+
+                <div className="row">
+
+                  <div className="col-md-3 mb-3 mt-3 center checkbox-wrapper">
+                    <label className="check-box">
+                      <input type="checkbox" />
+                      <span className="checkmark outline-secondary"></span>
+                      <div className="mt-8">
+                        <span className="form-label me-1">Is Corporate Inquiry</span>
+                      </div>
+                    </label>
+                    <label className="check-box">
+                      <input type="checkbox" />
+                      <span className="checkmark outline-secondary"></span>
+                      <div className="mt-8">
+                        <span className="form-label me-1">Same As Customer</span>
+                      </div>
+                    </label>
+                  </div>
+
+                  <div className="col-md-3 mb-3">
+                    <label className="form-label">Contact Person Name</label>
+                    <input type="text" className="form-control" />
+                  </div>
+                  <div className="col-md-3 mb-3">
+                    <label className="form-label">Contact Person No</label>
+                    <input type="number" className="form-control" />
+                  </div>
+                  <div className="col-md-3 mb-3">
+                    <label className="form-label">Contact Person Email</label>
+                    <input type="number" className="form-control" />
+                  </div>
+                </div>
+
+                <Col xs={12}>
+                  <Row>
+                    <Col md={12}>
+                      <h6 className="tab-heading">Inquiry Type</h6>
+                    </Col>
+
+                    {/* Option 1 */}
+                    <Col md={6} xl={4} className="mt-2">
+                      <Card className="shadow-none">
+                        <CardBody className="address-content">
+                          <FormGroup check>
+                            <Label check>
+                              <Input type="radio" name="hotel" />
+                              <span
+                                className="fs-6 tab-heading ms-2">Hotel Booking</span>
+                            </Label>
+                          </FormGroup>
+                        </CardBody>
+                      </Card>
+                    </Col>
+
+                    {/* Option 2 */}
+                    <Col md={6} xl={4} className="mt-2">
+                      <Card className="shadow-none equal-card">
+                        <CardBody className="address-content">
+                          <FormGroup check>
+                            <Label check>
+                              <Input type="radio" name="ticket" />
+                              <span
+                                className="fs-6 tab-heading ms-2">Ticket Booking</span>
+                            </Label>
+                          </FormGroup>
+                        </CardBody>
+                      </Card>
+                    </Col>
+
+                    {/* Option 3 */}
+                    <Col md={6} xl={4} className="mt-2">
+                      <Card className="shadow-none equal-card">
+                        <CardBody className="address-content">
+                          <FormGroup check>
+                            <Label check>
+                              <Input type="radio" name="transport" />
+                              <span className="fs-6 tab-heading ms-2">Transport Booking </span>
+                            </Label>
+                          </FormGroup>
+                        </CardBody>
+                      </Card>
+                    </Col>
+                  </Row>
+                </Col>
+
+                <div className="mb-3">
+                  <label className="form-label">Inquiry Detail</label>
+                  <TextEditor id="inquiryDetail" placeholder="Add All Other Inquiry Detail Here" />
+                </div>
+              </form>
+            </div>
+
+            <div className="app-divider-v dashed" />
+
+            <div className="main-title">
+              <h6>Hotel Booking</h6>
+            </div>
+            <div>
+              <form className="app-form">
+                <div className="row">
+                  <div className="col-md-3">
+                    <div className="mb-3">
+                      <label className="form-label">Check In & Out Date</label>
+
+                      <Flatpickr
+                        className="form-control picker-range"
+                        value={range}
+                        onChange={(dates) => setRange(dates)}
+                        options={{
+                          mode: "range",
+                          dateFormat: "Y-m-d",
+                        }}
+                        placeholder="YYYY-MM-DD to YYYY-MM-DD"
+                      />
+
                     </div>
                   </div>
-                </form>
-              </div>
+                  <div className="col-md-3">
+                    <div className="mb-3">
+                      <label className="form-label">Duration (number of nights)</label>
+                      <input disabled type="number" className="form-control" />
+                    </div>
+                  </div>
+                  <div className="col-md-6">
+                    <div className="mb-3">
+                      <label className="form-label">Destinations</label>
+                      <input type="text" className="form-control" placeholder="ex: Manali, Ladakh" />
+                      {/* <CustomSelectWithAddValue /> */}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mb-3">
+                  <label className="form-label">Hotel Detail</label>
+                  <TextEditor id="hotelDetail" placeholder="Add All Other Hotel Detail Here. like no of rooms, hotel category, etc..." />
+                </div>
+              </form>
             </div>
+
+            <div className="app-divider-v dashed" />
+            <div className="main-title">
+              <h6>Ticket Booking</h6>
+            </div>
+            <div>
+              <form className="app-form">
+                <div className="row">
+                  <div className="mb-3">
+                    {/* <label className="form-label">Ticket Booking Detail</label> */}
+                    <TextEditor id="ticketDetail" placeholder="Add Ticket Booking info like by flight, by train, No of persons" />
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div className="app-divider-v dashed" />
+            <div className="main-title">
+              <h6>Transport Booking</h6>
+            </div>
+            <div>
+              <form className="app-form">
+                <div className="row">
+                  <div className="mb-3">
+                    {/* <label className="form-label">Transport Booking Detail</label> */}
+                    <TextEditor id="transpoartDetail" placeholder="Add Transport Booking" />
+                  </div>
+                </div>
+              </form>
+            </div>
+
+
           </div>
         </div>
       </div>
+
     </div>
   );
 };
