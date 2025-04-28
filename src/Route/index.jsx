@@ -4,7 +4,7 @@ import { AppsRoutes } from '@/Route/AuthRoutes';
 import Layout from '@/Layout';
 
 const InquiryBoard = React.lazy(() => import('@/Pages/Inquiry/inquiryBoard'));
-const InquiryCreate = React.lazy(() => import('@/Pages/Inquiry/inquiryCreate'));
+const InquiryCreate = React.lazy(() => import('@/Pages/Inquiry/inquiryCreate/inquiryCreate'));
 const InquiryList = React.lazy(() => import('@/Pages/Inquiry/inquiryList'));
 const InquiryTrip = React.lazy(() => import('@/Pages/Inquiry/inquiryTrip'));
 const InquiryDetail = React.lazy(() => import('@/Pages/Inquiry/InquiryDetail'));

@@ -1,52 +1,33 @@
-import React, { useEffect, useState } from "react";
-import 'select2';
-import PropTypes from 'prop-types';
+import React from 'react';
+import Select from 'react-select';
 
-const CustomSelect = ({ options }) => {
-    const [selectedValue, setSelectedValue] = useState("");
+const CustomSelect = (props) => {
+  const defaultValue = (options, value) => {
+    return value
+      ? props?.multiple
+        ? value.map((data) => {
+            return options.find((option) => option.value === data);
+          })
+        : options.find((option) => option.value === value)
+      : '';
+  };
 
-    const handleSelectChange = (e) => {
-        setSelectedValue(e.target.value);
-    };
-
-    useEffect(() => {
-        setTimeout(() => {
-            // eslint-disable-next-line no-undef
-            const $selectElement = $('.category-select');
-            $selectElement.select2({
-                placeholder: "Select a category",
-                allowClear: false,
-            });
-
-            $selectElement.on('change', handleSelectChange);
-
-            return () => {
-                if ($selectElement.data('select2')) {
-                    $selectElement.select2('destroy');
-                }
-            };
-        }, 1000)
-    }, []);
-
-    return (
-        <select
-            className="category-select w-100"
-            defaultValue={selectedValue}
-        >
-            {options.map((option) => (
-                <option key={option.value} value={option.value}>
-                    {option.label}
-                </option>
-            ))}
-        </select>
-    );
-};
-
-CustomSelect.propTypes = {
-    options: PropTypes.arrayOf(PropTypes.shape({
-        value: PropTypes.string.isRequired,
-        label: PropTypes.string.isRequired,
-    })).isRequired,
+  return (
+    <Select
+      className="category-select w-100"
+      options={props.dropDownData}
+      onChange={(e) => props.onChange(e)}
+      value={defaultValue(props.dropDownData, props.value)}
+      isMulti={props?.multiple ? true : false}
+      styles={{
+        menu: (base) => ({
+          ...base,
+          zIndex: 9999, // Ensures dropdown appears above all other content
+          position: 'absolute',
+        }),
+      }}
+    />
+  );
 };
 
 export default CustomSelect;

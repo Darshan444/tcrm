@@ -11,6 +11,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.7.0",
     "apexcharts": "^4.2.0",
     "bootstrap": "^5.3.3",
     "chart.js": "^4.4.5",
@@ -39,14 +40,17 @@
     "react-dom": "^18.3.1",
     "react-filepond": "^7.1.2",
     "react-flatpickr": "^3.10.13",
+    "react-redux": "^9.2.0",
     "react-router-dom": "^6.27.0",
+    "react-select": "^5.10.1",
     "react-slick": "^0.30.2",
     "react-trumbowyg": "^1.1.0",
     "reactstrap": "^9.2.3",
     "sass": "^1.80.4",
     "select2": "^4.1.0-rc.0",
     "simplebar-react": "^3.2.6",
-    "sortablejs": "^1.15.3"
+    "sortablejs": "^1.15.3",
+    "trumbowyg": "^2.31.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",

@@ -1,34 +1,42 @@
-import React from "react";
-import Trumbowyg from 'react-trumbowyg';
-import PropTypes from 'prop-types';
 
-const TextEditor = ({ id, placeholder, data = "" }) => {
-    return (
-        <Trumbowyg
-            id={id}
-            placeholder={placeholder}
-            data={data}
-            buttons={[
-                ['viewHTML'],
-                ['undo', 'redo'],
-                ['formatting'],
-                ['strong', 'em', 'del'],
-                ['superscript', 'subscript'],
-                ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
-                ['unorderedList', 'orderedList'],
-                ['horizontalRule'],
-                ['removeformat'],
-                ['fullscreen']
-            ]}
-            onChange={() => { }}
-        />
-    );
-};
+import React, { useEffect } from 'react';
 
-TextEditor.propTypes = {
-    id: PropTypes.string.isRequired,
-    placeholder: PropTypes.string,
-    data: PropTypes.string,
+const TextEditor = ({ id, placeholder, onChange, value = '' }) => {
+  useEffect(() => {
+    $(`#${id}`).trumbowyg({
+      btns: [
+        ['viewHTML'],
+        ['undo', 'redo'], // Only supported in Blink browsers
+        ['formatting'],
+        ['strong', 'em', 'del'],
+        ['superscript', 'subscript'],
+        ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
+        ['unorderedList', 'orderedList'],
+        ['horizontalRule'],
+        ['removeformat'],
+        ['fullscreen'],
+      ],
+    });
+
+    $(function () {
+      var tooltip_init = {
+        init: function () {
+          $('button').tooltip();
+        },
+      };
+      tooltip_init.init();
+    });
+
+    $(`#${id}`).on('tbwchange', function () {
+      const content = $(this).trumbowyg('html');
+      onChange(content); // Update the parent component with new content
+    });
+  }, []);
+  return (
+    <div className="app-editor" id={id}>
+      <p>{value?.trim() ? value : placeholder}</p>
+    </div>
+  );
 };
 
 export default TextEditor;
